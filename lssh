@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+set ip (host $argv | grep "has address" | cut -d" " -f4)
+set hs (host $ip | cut -d" " -f5 | cut -d"." -f1)
+ssh $hs
